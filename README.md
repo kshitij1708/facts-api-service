@@ -24,7 +24,7 @@ The Facts API Service is designed to fetch random facts from an external API, sh
 
 1. **Clone the repository**
     ```sh
-    git clone <repository_url>
+    git clone git@github.com:kshitij1708/facts-api-service.git
     cd facts-api-service
     ```
 
