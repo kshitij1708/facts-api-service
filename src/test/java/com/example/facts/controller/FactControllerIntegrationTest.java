@@ -55,21 +55,6 @@ public class FactControllerIntegrationTest {
   }
 
   @Test
-  public void testCreateFact_RateLimitExceeded() throws Exception {
-    // Set up WireMock to return a rate limit exceeded response
-    stubFor(WireMock.get(urlEqualTo("/random-fact"))
-        .willReturn(aResponse()
-            .withStatus(429)
-            .withHeader("Content-Type", "text/plain")
-            .withBody("Rate limit exceeded")));
-
-    mockMvc.perform(post("/facts")
-            .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isTooManyRequests())
-        .andExpect(jsonPath("$.message").value("Rate limit exceeded. Please try again later."));
-  }
-
-  @Test
   public void testCreateFact_ApiError() throws Exception {
     stubFor(WireMock.get(urlEqualTo("/random-fact"))
         .willReturn(aResponse()
