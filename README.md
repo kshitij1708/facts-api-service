@@ -7,7 +7,6 @@ The Facts API Service is designed to fetch random facts from an external API, sh
 ## Technologies Used
 
 - **Spring Boot**: Framework for building the application.
-- **Spring Cloud Gateway**: For API Gateway and routing.
 - **Resilience4j**: For implementing rate limiting and resilience patterns.
 - **WireMock**: For mocking external API calls in tests.
 - **Lombok**: To reduce boilerplate code.
